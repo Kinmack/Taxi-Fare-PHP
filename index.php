@@ -1,19 +1,26 @@
-echo "<?php
-\$Base = 1000;
-\$Waitime = 0;
-\$distance = 14;
-\$DistFare = 5000 * \$distance;
-\$WaitFare = 500 * \$Waitime;
-\$Total = \$Base + \$WaitFare + \$DistFare;
-echo \"THE BASE FARE IS: \$Base UGX <br>\";
-echo \"THE WAITING TIME IS: \$Waitime MINUTES<br>\";
-echo \"THE DISTANCE IS: \$distance KM<br>\";
-echo \"THE TOTAL IS: \$Total UGX<br>\";
-if (\$distance >= 15) {
-    echo \"LONG TRIP <br>\";
-} elseif (\$distance >= 10) {
-    echo \"NORMAL TRIP <br>\";
+<?php
+$baseFare = 1000;
+$CostPerKm = 2000;
+$WaitRate = 500;
+
+$distance = 5;
+$WaiTime = 10;
+
+$DistFare = $CostPerKm * $distance;
+$WaitFare = $WaitRate * $WaiTime;
+
+$Total = $baseFare + $DistFare + $WaitFare;
+
+echo "THE BASE FARE IS: $baseFare UGX <br>";
+echo "THE WAITING TIME IS: $WaiTime MINUTES<br>";
+echo "THE DISTANCE IS: $distance KM<br>";
+echo "THE TOTAL IS: $Total UGX<br>";
+
+if ($distance >= 15) {
+    echo "LONG TRIP <br>";
+} elseif ($distance >= 10) {
+    echo "NORMAL TRIP <br>";
 } else {
-    echo \"SHORT TRIP\";
+    echo "SHORT TRIP";
 }
-?>" > index.php
+?>
