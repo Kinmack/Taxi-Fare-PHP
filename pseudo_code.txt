@@ -1,0 +1,29 @@
+START
+
+SET baseFare = 1000
+SET costPerKm = 2000
+SET waitRate = 500
+
+INPUT distance
+INPUT waitingTime
+
+distanceFare = distance × costPerKm
+waitingFare = waitingTime × waitRate
+
+total = baseFare + distanceCharge + waitingCharge
+
+DISPLAY "Base Fare: baseFare"
+DISPLAY "Waiting Time: waitingTime"
+DISPLAY "Distance: distance"
+DISPLAY "Total Fare: total"
+
+IF distance >= 15 THEN
+    DISPLAY "Long Trip"
+
+ELSE IF distance >= 10 THEN
+    DISPLAY "Medium Trip"
+
+ELSE
+    DISPLAY "Long Trip"
+
+END
